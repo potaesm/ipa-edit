@@ -6,13 +6,29 @@ iPA Edit is a Python script for modifying iPA files. It allows you to easily cha
 
 1. **Install Python:** Make sure you have Python installed on your system. If not, you can download and install it from the [official Python website](https://www.python.org/downloads/).
 
-2. **Install Dependencies:** Open your terminal or command prompt and run the following command to install the required Python libraries:
+2. **Create Virtual Environment**
 
-    ```bash
-    pip install Pillow argparse patoolib
-    ```
+```bash
+pip install pipenv
+# ------------------------------ #
+pipenv shell
+# or
+virtualenv venv
+# ------------------------------ #
+venv\Scripts\activate # windows
+# or
+source venv/bin/activate # linux
+# ------------------------------ #
+deactivate
+```
 
-3. **Install Zsign (optional):** If you want to sign iPA files, you need to compile `zsign`. This can be done from the [zsign GitHub page](https://github.com/zhlynn/zsign).
+3. **Install Dependencies:** Open your terminal or command prompt and run the following command to install the required Python libraries:
+
+```bash
+pip install Pillow argparse patool
+```
+
+4. **Install Zsign (optional):** If you want to sign iPA files, you need to compile `zsign`. This can be done from the [zsign GitHub page](https://github.com/zhlynn/zsign).
 
 ## Usage
 
@@ -21,6 +37,7 @@ Use the script by providing command-line arguments as follows:
 ```bash
 python ipaedit.py -i input.ipa -o output.ipa [Options]
 ```
+
 you can get usage info with `ipaedit.py -h`
 
 ```
@@ -47,8 +64,5 @@ options:
   -e              .deb to .iPA (only works if the .deb has a Payload folder, for example Kodi)
   -k              keep source iPA/deb
 ```
+
 If you have suggestions for what else I could add then create an issue or [contact me](https://binnichtaktiv.github.io/contact)
-
-
-
-
